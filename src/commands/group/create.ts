@@ -217,18 +217,34 @@ export default class GroupCreate extends Command {
           config.port = answers.port;
         });
 
-      this.log("This is your configuration:");
-      this.log(chalk.blue("Name: ") + config.groupName);
-      this.log(chalk.blue("Type: ") + config.type);
-      this.log(chalk.blue("Template: ") + config.template);
-      this.log(chalk.blue("Software: ") + config.software);
-      this.log(chalk.blue("Version: ") + config.version);
-      this.log(chalk.blue("Min. memory: ") + config.minMemory);
-      this.log(chalk.blue("Max. memory: ") + config.maxMemory);
-      this.log(chalk.blue("Min. Servers: ") + config.minServer);
-      this.log(chalk.blue("Max. Servers: ") + config.maxServer);
-      this.log(chalk.blue("Max. Players: ") + config.maxPlayers);
-      this.log(chalk.blue("Port: ") + config.port + "\n");
+      this.log("\nThis is your configuration:");
+      this.log(`${chalk.gray("┃ ")}${chalk.blue("Name: ")}${config.groupName}`);
+      this.log(`${chalk.gray("┃ ")}${chalk.blue("Type: ")}${config.type}`);
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Template: ")}${config.template}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Software: ")}${config.software}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Version: ")}${config.version}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Min. memory: ")}${config.minMemory}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Max. memory: ")}${config.maxMemory}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Min. Servers: ")}${config.minServer}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Max. Servers: ")}${config.maxServer}`
+      );
+      this.log(
+        `${chalk.gray("┃ ")}${chalk.blue("Max. Players: ")}${config.maxPlayers}`
+      );
+      this.log(`${chalk.gray("┃ ")}${chalk.blue("Port: ")}${config.port}\n`);
 
       const spinner = ora("Creating Group...").start();
 
