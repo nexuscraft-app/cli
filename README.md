@@ -20,7 +20,7 @@ $ npm install -g nexuscraft-cli
 $ nexus COMMAND
 running command...
 $ nexus (--version)
-nexuscraft-cli/1.0.2 darwin-arm64 node-v22.1.0
+nexuscraft-cli/1.2.0 darwin-arm64 node-v22.1.0
 $ nexus --help [COMMAND]
 USAGE
   $ nexus COMMAND
@@ -49,6 +49,7 @@ USAGE
 * [`nexus server start [FILE]`](#nexus-server-start-file)
 * [`nexus server stop [FILE]`](#nexus-server-stop-file)
 * [`nexus servers`](#nexus-servers)
+* [`nexus setup`](#nexus-setup)
 
 ## `nexus connect`
 
@@ -69,7 +70,7 @@ EXAMPLES
   $ nexus connect --u my-username --s my-secret
 ```
 
-_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/connect.ts)_
+_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/connect.ts)_
 
 ## `nexus group create`
 
@@ -86,7 +87,7 @@ EXAMPLES
   $ nexus group create
 ```
 
-_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/create.ts)_
+_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/group/create.ts)_
 
 ## `nexus group delete`
 
@@ -103,7 +104,7 @@ EXAMPLES
   $ nexus group delete
 ```
 
-_See code: [src/commands/group/delete.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/delete.ts)_
+_See code: [src/commands/group/delete.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/group/delete.ts)_
 
 ## `nexus group start [GROUPNAME]`
 
@@ -120,7 +121,7 @@ EXAMPLES
   $ nexus group start
 ```
 
-_See code: [src/commands/group/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/start.ts)_
+_See code: [src/commands/group/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/group/start.ts)_
 
 ## `nexus group stop [FILE]`
 
@@ -144,7 +145,7 @@ EXAMPLES
   $ nexus group stop
 ```
 
-_See code: [src/commands/group/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/stop.ts)_
+_See code: [src/commands/group/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/group/stop.ts)_
 
 ## `nexus groups`
 
@@ -161,7 +162,7 @@ EXAMPLES
   $ nexus groups
 ```
 
-_See code: [src/commands/groups.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/groups.ts)_
+_See code: [src/commands/groups.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/groups.ts)_
 
 ## `nexus help [COMMAND]`
 
@@ -495,7 +496,7 @@ EXAMPLES
   $ nexus server start
 ```
 
-_See code: [src/commands/server/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/server/start.ts)_
+_See code: [src/commands/server/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/server/start.ts)_
 
 ## `nexus server stop [FILE]`
 
@@ -519,7 +520,7 @@ EXAMPLES
   $ nexus server stop
 ```
 
-_See code: [src/commands/server/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/server/stop.ts)_
+_See code: [src/commands/server/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/server/stop.ts)_
 
 ## `nexus servers`
 
@@ -536,5 +537,29 @@ EXAMPLES
   $ nexus servers
 ```
 
-_See code: [src/commands/servers.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/servers.ts)_
+_See code: [src/commands/servers.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/servers.ts)_
+
+## `nexus setup`
+
+setup a new network
+
+```
+USAGE
+  $ nexus setup [-a] [-l <value>] [-n <value>] [--ram <value>] [-t <value>]
+
+FLAGS
+  -a, --autoUpdate    auto update the cli
+  -l, --lang=<value>  language for the cli
+  -n, --name=<value>  name of the network
+  -t, --type=<value>  type of the network
+      --ram=<value>   ram for the network
+
+DESCRIPTION
+  setup a new network
+
+EXAMPLES
+  $ nexus setup
+```
+
+_See code: [src/commands/setup.ts](https://github.com/nexuscraft-app/cli/blob/v1.2.0/src/commands/setup.ts)_
 <!-- commandsstop -->
