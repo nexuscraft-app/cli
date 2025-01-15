@@ -20,7 +20,7 @@ $ npm install -g nexuscraft-cli
 $ nexus COMMAND
 running command...
 $ nexus (--version)
-nexuscraft-cli/1.0.1 darwin-arm64 node-v22.1.0
+nexuscraft-cli/1.0.2 darwin-arm64 node-v22.1.0
 $ nexus --help [COMMAND]
 USAGE
   $ nexus COMMAND
@@ -30,7 +30,11 @@ USAGE
 # Commands
 <!-- commands -->
 * [`nexus connect`](#nexus-connect)
-* [`nexus group create NAME`](#nexus-group-create-name)
+* [`nexus group create`](#nexus-group-create)
+* [`nexus group delete`](#nexus-group-delete)
+* [`nexus group start [GROUPNAME]`](#nexus-group-start-groupname)
+* [`nexus group stop [FILE]`](#nexus-group-stop-file)
+* [`nexus groups`](#nexus-groups)
 * [`nexus help [COMMAND]`](#nexus-help-command)
 * [`nexus plugins`](#nexus-plugins)
 * [`nexus plugins add PLUGIN`](#nexus-plugins-add-plugin)
@@ -42,6 +46,9 @@ USAGE
 * [`nexus plugins uninstall [PLUGIN]`](#nexus-plugins-uninstall-plugin)
 * [`nexus plugins unlink [PLUGIN]`](#nexus-plugins-unlink-plugin)
 * [`nexus plugins update`](#nexus-plugins-update)
+* [`nexus server start [FILE]`](#nexus-server-start-file)
+* [`nexus server stop [FILE]`](#nexus-server-stop-file)
+* [`nexus servers`](#nexus-servers)
 
 ## `nexus connect`
 
@@ -62,18 +69,15 @@ EXAMPLES
   $ nexus connect --u my-username --s my-secret
 ```
 
-_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.1/src/commands/connect.ts)_
+_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/connect.ts)_
 
-## `nexus group create NAME`
+## `nexus group create`
 
 Create a new group on your cloud
 
 ```
 USAGE
-  $ nexus group create NAME
-
-ARGUMENTS
-  NAME  the name of the group
+  $ nexus group create
 
 DESCRIPTION
   Create a new group on your cloud
@@ -82,7 +86,82 @@ EXAMPLES
   $ nexus group create
 ```
 
-_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.1/src/commands/group/create.ts)_
+_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/create.ts)_
+
+## `nexus group delete`
+
+delete a group
+
+```
+USAGE
+  $ nexus group delete
+
+DESCRIPTION
+  delete a group
+
+EXAMPLES
+  $ nexus group delete
+```
+
+_See code: [src/commands/group/delete.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/delete.ts)_
+
+## `nexus group start [GROUPNAME]`
+
+describe the command here
+
+```
+USAGE
+  $ nexus group start [GROUPNAME]
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ nexus group start
+```
+
+_See code: [src/commands/group/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/start.ts)_
+
+## `nexus group stop [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ nexus group stop [FILE] [-f] [-n <value>]
+
+ARGUMENTS
+  FILE  file to read
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ nexus group stop
+```
+
+_See code: [src/commands/group/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/group/stop.ts)_
+
+## `nexus groups`
+
+list all groups
+
+```
+USAGE
+  $ nexus groups
+
+DESCRIPTION
+  list all groups
+
+EXAMPLES
+  $ nexus groups
+```
+
+_See code: [src/commands/groups.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/groups.ts)_
 
 ## `nexus help [COMMAND]`
 
@@ -393,4 +472,69 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.25/src/commands/plugins/update.ts)_
+
+## `nexus server start [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ nexus server start [FILE] [-f] [-n <value>]
+
+ARGUMENTS
+  FILE  file to read
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ nexus server start
+```
+
+_See code: [src/commands/server/start.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/server/start.ts)_
+
+## `nexus server stop [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ nexus server stop [FILE] [-f] [-n <value>]
+
+ARGUMENTS
+  FILE  file to read
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ nexus server stop
+```
+
+_See code: [src/commands/server/stop.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/server/stop.ts)_
+
+## `nexus servers`
+
+list all servers
+
+```
+USAGE
+  $ nexus servers
+
+DESCRIPTION
+  list all servers
+
+EXAMPLES
+  $ nexus servers
+```
+
+_See code: [src/commands/servers.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.2/src/commands/servers.ts)_
 <!-- commandsstop -->
