@@ -1,30 +1,81 @@
-import {Args, Command, Flags} from '@oclif/core'
+/* eslint-disable no-warning-comments */
+import { Command } from "@oclif/core";
+import chalk from "chalk";
+import inquirer from "inquirer";
+import ora from "ora";
+
+import { secret } from "../../utils/secret.js";
+
+const groups = [
+  {
+    description: "the fallback group",
+    id: 1,
+    name: "Lobby",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 2,
+    name: "BedWars",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 3,
+    name: "SkyWars",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 4,
+    name: "CityBuild",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 5,
+    name: "Lobby",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 6,
+    name: "BuildFFA",
+    online: "1/5",
+  },
+  {
+    description: "the fallback group",
+    id: 7,
+    name: "Builder",
+    online: "1/5",
+  },
+];
 
 export default class GroupDelete extends Command {
-  static override args = {
-    file: Args.string({description: 'file to read'}),
-  }
+  static override description = "delete a group";
 
-  static override description = 'describe the command here'
-
-  static override examples = [
-    '<%= config.bin %> <%= command.id %>',
-  ]
-
-  static override flags = {
-    // flag with no value (-f, --force)
-    force: Flags.boolean({char: 'f'}),
-    // flag with a value (-n, --name=VALUE)
-    name: Flags.string({char: 'n', description: 'name to print'}),
-  }
+  static override examples = ["<%= config.bin %> <%= command.id %>"];
 
   public async run(): Promise<void> {
-    const {args, flags} = await this.parse(GroupDelete)
+    const key = await secret.read(this);
 
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from /Users/luca/Desktop/nexuscraft-cli/src/commands/group/delete.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
+    if (key) {
+      // TODO: change this to autocomplete
+      await inquirer.prompt([
+        {
+          choices: groups.map((group) => group.name),
+          default: "",
+          message: "Choose a group to delete",
+          name: "group",
+          type: "list",
+        },
+      ]);
+
+      const spinner = ora("Deleting Group...").start();
+
+      setTimeout(() => {
+        spinner.succeed(chalk.green("Group deleted!"));
+      }, 1500);
     }
   }
 }
