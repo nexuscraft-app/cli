@@ -20,7 +20,7 @@ $ npm install -g nexuscraft-cli
 $ nexus COMMAND
 running command...
 $ nexus (--version)
-nexuscraft-cli/1.0.0 darwin-arm64 node-v22.1.0
+nexuscraft-cli/1.0.1 darwin-arm64 node-v22.1.0
 $ nexus --help [COMMAND]
 USAGE
   $ nexus COMMAND
@@ -62,7 +62,7 @@ EXAMPLES
   $ nexus connect --u my-username --s my-secret
 ```
 
-_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.0/src/commands/connect.ts)_
+_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.1/src/commands/connect.ts)_
 
 ## `nexus group create NAME`
 
@@ -82,7 +82,7 @@ EXAMPLES
   $ nexus group create
 ```
 
-_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.0/src/commands/group/create.ts)_
+_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.1/src/commands/group/create.ts)_
 
 ## `nexus help [COMMAND]`
 

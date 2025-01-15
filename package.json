@@ -12,7 +12,9 @@
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
     "chalk": "^5.4.1",
+    "cli-table3": "^0.6.5",
     "inquirer": "^12.3.2",
+    "makensis": "^2.0.8",
     "ora": "^8.1.1",
     "terminal-link": "^3.0.0"
   },
@@ -54,18 +56,24 @@
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-update"
     ],
     "topicSeparator": " ",
     "topics": {
       "hello": {
         "description": "Say hello to the world and others"
       }
+    },
+    "macos": {
+      "identifier": "app.nexuscraft.cli"
     }
   },
   "repository": "nexuscraft-app/cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
+    "dev": "pnpm run build && ./bin/run.js",
     "lint": "eslint . --ext .ts",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "pnpm run lint",
