@@ -62,7 +62,7 @@ EXAMPLES
   $ nexus connect --u my-username --s my-secret
 ```
 
-_See code: [src/commands/connect.ts](https://github.com/lucabmn1/nexuscraft-cli/blob/v1.0.0/src/commands/connect.ts)_
+_See code: [src/commands/connect.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.0/src/commands/connect.ts)_
 
 ## `nexus group create NAME`
 
@@ -82,7 +82,7 @@ EXAMPLES
   $ nexus group create
 ```
 
-_See code: [src/commands/group/create.ts](https://github.com/lucabmn1/nexuscraft-cli/blob/v1.0.0/src/commands/group/create.ts)_
+_See code: [src/commands/group/create.ts](https://github.com/nexuscraft-app/cli/blob/v1.0.0/src/commands/group/create.ts)_
 
 ## `nexus help [COMMAND]`
 

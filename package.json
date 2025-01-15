@@ -1,8 +1,8 @@
 {
   "name": "nexuscraft-cli",
   "description": "A simple CLI to interact with the NexusCraft Cloud",
-  "version": "1.0.0",
-  "author": "luca",
+  "version": "1.0.1",
+  "author": "nexuscraft",
   "bin": {
     "nexus": "./bin/run.js"
   },
